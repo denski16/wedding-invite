@@ -172,6 +172,46 @@
         </div>
     </section>
 
+    <!-- RSVP / Contact Section -->
+    <section id="contact" class="rsvp-section">
+        <div class="rsvp-container">
+            <h2 class="rsvp-title">Are You Attending?</h2>
+
+            <div class="heart-divider">
+                <hr> <span>&hearts;</span>
+                <hr>
+            </div>
+
+            <p class="rsvp-subtitle">Please let us know by May 20, 2032</p>
+
+            <!-- The action URL will be provided by Formspree in Step 3 -->
+            <form action="https://formspree.io/f/mnpqkjzb" method="POST" class="rsvp-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Full Name(s)" required>
+                </div>
+
+                <div class="form-group">
+                    <select name="attendance" required>
+                        <option value="" disabled selected>Will you be attending?</option>
+                        <option value="Yes">Joyfully Accept</option>
+                        <option value="No">Regretfully Decline</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" name="guests" placeholder="Total Number of Guests" min="1" max="10">
+                </div>
+
+                <div class="form-group">
+                    <textarea name="message" placeholder="Leave a message for the couple (Optional)"
+                        rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="rsvp-btn">Send RSVP</button>
+            </form>
+        </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
 

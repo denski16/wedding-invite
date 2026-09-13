@@ -395,3 +395,86 @@ body {
     /* Removes the tiny gap below inline elements */
     outline: none;
 }
+
+/* --- RSVP Section --- */
+.rsvp-section {
+    padding: 100px 20px;
+    background-color: #f9f6f0;
+    /* Brings back the off-white background */
+    text-align: center;
+}
+
+.rsvp-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rsvp-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.rsvp-subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #555;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* Form Layout and Styling */
+.rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    /* Keeps the edges sharp and elegant */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    transition: border-color 0.3s;
+}
+
+/* Removes the default styling on dropdown menus in some browsers */
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #333;
+    /* Darkens the border when typing */
+}
+
+.rsvp-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.rsvp-btn:hover {
+    background-color: #555;
+}
