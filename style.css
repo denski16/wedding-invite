@@ -181,18 +181,9 @@ body {
     font-weight: bold;
 }
 
-/* Mobile Responsiveness: Stacks the image on top of text on small screens */
-@media (max-width: 768px) {
-    .events-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-}
-
 /* --- Countdown Section --- */
 .countdown-section {
     padding: 100px 20px;
-    /* Replace 'countdown-bg.jpg' with your background image filename */
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('flower.png');
     background-size: cover;
     background-position: center;
@@ -243,24 +234,10 @@ body {
     letter-spacing: 2px;
 }
 
-/* Mobile Responsiveness: shrinks circles slightly for phones */
-@media (max-width: 600px) {
-    .time-number {
-        width: 80px;
-        height: 80px;
-        font-size: 28px;
-    }
-
-    .countdown-container {
-        gap: 15px;
-    }
-}
-
 /* --- Wedding Events Itinerary Section --- */
 .wedding-events-section {
     padding: 100px 20px;
     background-color: #faf9f7;
-    /* Very subtle off-white to distinguish from previous sections */
     display: flex;
     justify-content: center;
 }
@@ -341,19 +318,6 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* Mobile Responsiveness: Stacks the layout on smaller screens */
-@media (max-width: 850px) {
-    .wedding-events-container {
-        flex-direction: column;
-        gap: 50px;
-    }
-
-    .timeline-image {
-        /* Moves the image above the itinerary text on mobile */
-        order: -1;
-    }
-}
-
 /* --- Gallery Section --- */
 .gallery-section {
     padding: 100px 20px;
@@ -377,13 +341,9 @@ body {
 /* Video Player Styling */
 .video-wrapper {
     margin-top: 40px;
-    /* Creates the framed photo effect around the video */
     border: 15px solid white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     background-color: #000;
-    /* Keeps black bars clean if aspect ratio differs */
-
-    /* Ensures the border wraps tightly around the video */
     width: 100%;
     display: flex;
 }
@@ -392,7 +352,6 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    /* Removes the tiny gap below inline elements */
     outline: none;
 }
 
@@ -400,7 +359,6 @@ body {
 .rsvp-section {
     padding: 100px 20px;
     background-color: #f9f6f0;
-    /* Brings back the off-white background */
     text-align: center;
 }
 
@@ -439,14 +397,12 @@ body {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 0;
-    /* Keeps the edges sharp and elegant */
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     background-color: transparent;
     transition: border-color 0.3s;
 }
 
-/* Removes the default styling on dropdown menus in some browsers */
 .form-group select {
     appearance: none;
     -webkit-appearance: none;
@@ -458,7 +414,6 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: #333;
-    /* Darkens the border when typing */
 }
 
 .rsvp-btn {
@@ -477,4 +432,90 @@ body {
 
 .rsvp-btn:hover {
     background-color: #555;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+   This block targets screens smaller than 850px (tablets & phones)
+========================================================= */
+@media (max-width: 850px) {
+
+    /* 1. Reduce massive paddings so mobile users don't have to scroll endlessly */
+    .story-section,
+    .events-section,
+    .countdown-section,
+    .wedding-events-section,
+    .gallery-section,
+    .rsvp-section {
+        padding: 60px 20px;
+    }
+
+    /* 2. Re-stack and format the top navigation */
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.0));
+        /* Helps text pop on mobile */
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    /* 3. Scale down the massive elegant fonts for smaller screens */
+    .names {
+        font-size: 65px;
+        margin-top: 20px;
+    }
+
+    .section-title,
+    .event-names,
+    .countdown-title,
+    .timeline-main-title,
+    .gallery-title,
+    .rsvp-title {
+        font-size: 40px;
+    }
+
+    /* 4. Ensure side-by-side flex layouts stack neatly into a single column */
+    .events-container,
+    .wedding-events-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* Move the itinerary image ABOVE the timeline on mobile */
+    .timeline-image {
+        order: -1;
+    }
+
+    /* 5. Scale down countdown circles so they fit on one row if possible */
+    .time-number {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+    }
+
+    .countdown-container {
+        gap: 15px;
+    }
+
+    .event-date {
+        font-size: 24px;
+    }
+
+    /* 6. Slightly shrink the thick borders on framed elements */
+    .event-image img,
+    .timeline-image img,
+    .video-wrapper {
+        border-width: 8px;
+    }
 }
