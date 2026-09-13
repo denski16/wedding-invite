@@ -1,57 +1,397 @@
-body {
+/* Reset default margins */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Georgia', serif;
+    box-sizing: border-box;
+}
+
+/* Set the default font for the document */
+body {
+    font-family: 'Montserrat', sans-serif;
     background-color: #f9f6f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+/* Full-Screen Hero Section */
+.hero {
     height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('weddingpic.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Transparent Navigation Bar */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+}
+
+.logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Center Typography */
+.hero-content {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.subtitle {
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 110px;
+    font-weight: 400;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Story Section --- */
+.story-section {
+    /* Adds breathing room at the top and bottom */
+    padding: 100px 20px;
+    background-color: #ffffff;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+.story-container {
+    max-width: 700px;
+    /* Centers the container on the page */
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 56px;
+    font-weight: 400;
+    margin-bottom: 30px;
     color: #333;
 }
 
-.invitation-container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    max-width: 500px;
-}
-
-h1 {
-    font-size: 24px;
-    color: #6b705c;
-}
-
-h2 {
-    font-size: 36px;
-    margin: 10px 0;
-    color: #a5a58d;
-}
-
-.details {
-    margin: 20px 0;
-    line-height: 1.6;
-}
-
-#countdown {
-    font-weight: bold;
-    margin: 20px 0;
-    color: #b7b7a4;
-}
-
-button {
-    background-color: #cb997e;
-    color: white;
-    border: none;
-    padding: 10px 20px;
+.story-container p {
     font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
 }
 
-button:hover {
-    background-color: #ddbea9;
+/* --- Events Section --- */
+.events-section {
+    padding: 100px 20px;
+    background-color: #f9f6f0;
+    /* Slightly off-white background to contrast with the story section */
+    display: flex;
+    justify-content: center;
+}
+
+.events-container {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    align-items: center;
+    gap: 80px;
+    /* Space between the image and text */
+}
+
+.event-image {
+    flex: 1;
+}
+
+.event-image img {
+    width: 100%;
+    max-width: 450px;
+    display: block;
+    margin: 0 auto;
+
+    /* Recreates the framed photo effect from your reference */
+    border: 15px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.event-details {
+    flex: 1;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+.small-caps {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.event-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.event-date {
+    font-size: 32px;
+    letter-spacing: 4px;
+    margin: 25px 0;
+    color: #333;
+}
+
+.location {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+/* Mobile Responsiveness: Stacks the image on top of text on small screens */
+@media (max-width: 768px) {
+    .events-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+/* --- Countdown Section --- */
+.countdown-section {
+    padding: 100px 20px;
+    /* Replace 'countdown-bg.jpg' with your background image filename */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('flower.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Creates a slight 3D scrolling effect */
+    text-align: center;
+    color: white;
+}
+
+.countdown-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Creates the white circles around the numbers */
+.time-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: 300;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.time-label {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Mobile Responsiveness: shrinks circles slightly for phones */
+@media (max-width: 600px) {
+    .time-number {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+    }
+
+    .countdown-container {
+        gap: 15px;
+    }
+}
+
+/* --- Wedding Events Itinerary Section --- */
+.wedding-events-section {
+    padding: 100px 20px;
+    background-color: #faf9f7;
+    /* Very subtle off-white to distinguish from previous sections */
+    display: flex;
+    justify-content: center;
+}
+
+.wedding-events-container {
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Left Side: Timeline */
+.timeline-wrapper {
+    flex: 1;
+    text-align: center;
+}
+
+.timeline-main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Creates the horizontal lines with the heart in the middle */
+.heart-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 45px;
+    color: #333;
+    font-size: 12px;
+}
+
+.heart-divider hr {
+    width: 60px;
+    border: none;
+    border-top: 1px solid #333;
+}
+
+.timeline-item h3 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.timeline-item p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #777;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* Creates the vertical dividing lines between events */
+.timeline-line {
+    height: 35px;
+    width: 1px;
+    background-color: #333;
+    margin: 20px auto;
+}
+
+/* Right Side: Image */
+.timeline-image {
+    flex: 1;
+}
+
+.timeline-image img {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+    border: 15px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile Responsiveness: Stacks the layout on smaller screens */
+@media (max-width: 850px) {
+    .wedding-events-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .timeline-image {
+        /* Moves the image above the itinerary text on mobile */
+        order: -1;
+    }
+}
+
+/* --- Gallery Section --- */
+.gallery-section {
+    padding: 100px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.gallery-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.gallery-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Video Player Styling */
+.video-wrapper {
+    margin-top: 40px;
+    /* Creates the framed photo effect around the video */
+    border: 15px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #000;
+    /* Keeps black bars clean if aspect ratio differs */
+
+    /* Ensures the border wraps tightly around the video */
+    width: 100%;
+    display: flex;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Removes the tiny gap below inline elements */
+    outline: none;
 }
